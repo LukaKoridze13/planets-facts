@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
+
+// Global Styles
+.between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+body{
+    overflow-x: hidden;
+}
+// Styles
+.container {
+    width: 100vw;
+    max-width: 1920px;
+    min-height: 100vh;
+    background-image: url('../assets/background-stars.svg');
+    background-size: cover;
+    background-color: #070724;
+
+    font-size: 10px;
+}
+
+// Header
+header {
+    padding: 22px 41px 27px 32px;
+    gap: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    h1 {
+        font-family: 'Antonio';
+        font-weight: 400;
+        font-size: 2.8em;
+        color: #FFFFFF;
+    }
+
+    a {
+        font-family: 'Spartan';
+        font-weight: 700;
+        font-size: 1.1em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+
+    ul {
+        gap: 33px;
+    }
+
+    img {
+        display: none;
+    }
+
+    li {
+        width: fit-content;
+        opacity: 0.75;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+nav.mobile {
+    display: none;
+}
+
+// Main
+main {
+    margin-top: 8vh;
+    gap: 10vw;
+    img.planet {
+        display: block;
+        max-width: 550px;
+        max-height: 550px;
+    }
+
+    aside {
+        width: 350px;
+    }
+
+    h2 {
+        font-family: 'Antonio';
+        font-weight: 400;
+        font-size: 80px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+
+    p {
+        margin-top: 24px;
+        font-family: 'Spartan';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 25px;
+        color: #FFFFFF;
+    }
+
+    p.link {
+        margin-top: 24px;
+        font-family: 'Spartan';
+        font-weight: 300;
+        font-size: 14px;
+        color: #ffffff98;
+        mix-blend-mode: normal;
+
+        a {
+            font-family: 'Spartan';
+            font-weight: 700;
+            font-size: 14px;
+            color: #ffffffb1;
+        }
+    }
+
+    button.infoChange {
+        width: 100%;
+        height: 48px;
+        padding: 12px 28px;
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 16px;
+        cursor: pointer;
+
+        &:nth-child(4) {
+            margin-top: 39px;
+        }
+
+        p {
+            margin-top: 0px;
+        }
+
+        p.num {
+            font-family: 'Spartan';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 25px;
+            /* identical to box height, or 208% */
+
+            letter-spacing: 2.57143px;
+            text-transform: uppercase;
+
+            color: #FFFFFF;
+
+            mix-blend-mode: normal;
+            opacity: 0.5;
+        }
+
+        p.text {
+            font-family: 'Spartan';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 25px;
+            /* identical to box height, or 208% */
+
+            letter-spacing: 2.57143px;
+            text-transform: uppercase;
+
+            color: #FFFFFF;
+        }
+    }
+}
+.infobox{
+    padding-inline: 20px;
+    margin-top: 87px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.box {
+    height: 128px;
+    width: 255px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 23px;
+    .title {
+        font-family: 'Spartan';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 25px;
+        /* identical to box height, or 227% */
+
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+
+        mix-blend-mode: normal;
+        opacity: 0.5;
+    }
+
+    .number {
+        font-family: 'Antonio';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 52px;
+        /* identical to box height */
+
+        letter-spacing: -1.5px;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+    }
+}
