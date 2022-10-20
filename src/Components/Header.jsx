@@ -10,7 +10,6 @@ export default function Header(props) {
     useEffect(() => {
         if (location.pathname === '/planets-facts' || location.pathname === '/planets-facts/') {
             navigate('/planets-facts/Mercury')
-
         }
     })
     return (
@@ -29,7 +28,7 @@ export default function Header(props) {
             {visible && <nav className="mobile">
                 <ul>
                     {props.planets.map((planet) => {
-                        return <NavigateMobile  name={planet.name} color={planet.color} key={planet.name} />
+                        return <NavigateMobile onClick={()=>{visible && setVisible(false)}} name={planet.name} color={planet.color} key={planet.name} />
                     })}
                 </ul>
             </nav>}

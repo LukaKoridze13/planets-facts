@@ -27,6 +27,7 @@ body{
     background-color: #070724;
 
     font-size: 10px;
+    padding-bottom: 50px;
 }
 
 // Header
@@ -76,6 +77,11 @@ nav.mobile {
 main {
     margin-top: 8vh;
     gap: 10vw;
+    .planet-div{
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+    }
     img.planet {
         display: block;
         max-width: 550px;
@@ -217,4 +223,7 @@ main {
 
         color: #FFFFFF;
     }
+}
+.mobile_header{
+    display: none;
 }

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Link from '../assets/icon-source.svg'
 import Box from './Box'
 import Button from './Button'
+import MobileButtons from './MobileButtons'
 export default function Planet(props) {
     const [info, setInfo] = useState('overview')
     let { planet } = useParams()
@@ -13,21 +14,11 @@ export default function Planet(props) {
     let Geology = require(`../assets/geology-${planeta.name.toLowerCase()}.png`)
     const [image, setImage] = useState(Planeta)
     let Image = useRef()
-    const [left, setLeft] = useState(0)
-    const [top, setTop] = useState(0)
     const [visible, setVisible] = useState(false)
-    function getStats() {
-        setLeft(Image.current.getBoundingClientRect().x + Image.current.getBoundingClientRect().width / 2 - (163 / 2))
-        setTop(Image.current.getBoundingClientRect().y + Image.current.getBoundingClientRect().height / 7 * 5)
-    }
-    useEffect(() => {
-        getStats();
-    })
     useEffect(() => {
         setInfo('overview')
         setActive(['active', 'passive', 'passive'])
         setVisible(false)
-        console.log('test')
     }, [planeta])
     useEffect(() => {
         active[0] === 'active' ? setImage(Planeta) : setImage(PlanetInside)
@@ -35,16 +26,22 @@ export default function Planet(props) {
     }, [active, Planeta, PlanetInside])
     return (
         <>
+            <div className="mobile_header">
+                <MobileButtons text='OVERVIEW' color={planeta.color} status={active[0]} onClick={() => { setInfo('overview'); setActive(['active', 'passive', 'passive']); setVisible(false) }} />
+                <MobileButtons text='Structure' color={planeta.color} status={active[1]} onClick={() => { setInfo('structure'); setActive(['passive', 'active', 'passive']); setVisible(false) }} />
+                <MobileButtons text='Surface' color={planeta.color} status={active[2]} onClick={() => { setInfo('geology'); setActive(['passive', 'passive', 'active']); setVisible(true) }} />
+            </div>
             <main className='center'>
-                <img ref={Image} className='planet' src={image} alt={planeta.name} />
-                {visible && <img style={{ position: 'absolute', top, left, width: '163px' }} src={Geology} alt='Planet Geology' />}
+                <div className='planet-div'>
+                    <img ref={Image} className='planet' src={image} alt={planeta.name} />
+                    {visible && <img className='planet-in' style={{ position: 'absolute', top:'60%',left:'50%', width: '150px', transform: 'translate(-50%)' }} src={Geology} alt='Planet Geology' />}</div>
                 <aside>
-                    <div>
+                    <div className='texts'>
                         <h2>{planeta.name}</h2>
                         <p>{planeta[info].content}</p>
                         <p className="link">Source: <a href={planeta[info].source}>Wikipedia <img src={Link} alt="Source Icon" /></a></p>
                     </div>
-                    <div>
+                    <div className='buttons'>
                         <Button num='01' status={active[0]} text='OVERVIEW' color={planeta.color} onClick={() => { setInfo('overview'); setActive(['active', 'passive', 'passive']); setVisible(false) }} />
                         <Button num='02' status={active[1]} text='Internal Structure' color={planeta.color} onClick={() => { setInfo('structure'); setActive(['passive', 'active', 'passive']); setVisible(false) }} />
                         <Button num='03' status={active[2]} text='Surface Geology' color={planeta.color} onClick={() => { setInfo('geology'); setActive(['passive', 'passive', 'active']); setVisible(true) }} />

@@ -1,25 +1,31 @@
 @media (max-width: 1000px) {
-    main{
+    main {
         flex-direction: column;
-        h2{
+
+        h2 {
             font-size: 60px;
         }
     }
-    aside{
+
+    aside {
         display: flex;
         width: 100% !important;
         justify-content: space-around;
-        div{
+
+        div {
             width: 40%;
         }
     }
-    .text{
+
+    .text {
         font-size: 9px;
     }
-    .number{
+
+    .number {
         font-size: 30px !important;
     }
 }
+
 @media (max-width: 836px) {
     header.between {
         justify-content: center;
@@ -27,7 +33,6 @@
     }
 }
 
-@media (max-width: 768px) {}
 
 @media (max-width: 480px) {
     header.between {
@@ -52,7 +57,8 @@
 
         ul {
             width: 100%;
-            li{
+
+            li {
                 padding: 20px 0px;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
@@ -64,6 +70,78 @@
             font-size: 15px;
             text-transform: uppercase;
             color: #FFFFFF;
+        }
+    }
+
+    .buttons {
+        display: none;
+    }
+
+    .planet-div {
+        max-width: 90vw;
+
+        img.planet {
+            max-width: 100%;
+            transform: scale(0.6);
+        }
+
+        img.planet-in {
+            transform: translateX(-50%) translateY(-15%) scale(0.6) !important;
+        }
+    }
+
+    aside {
+        width: 90vw !important;
+
+        .texts {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .box {
+        width: 90vw;
+        height: fit-content;
+        flex-direction: row;
+        padding: 10px 20px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    p.number {
+        font-size: 23px !important;
+    }
+
+    .infobox {
+        gap: 8px;
+    }
+
+    .mobile_header {
+        display: flex;
+        width: 100vw;
+        height: 50px;
+        justify-content: space-around;
+        align-items: center;
+        .infoChangeMobile {
+            font-family: 'Spartan';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 9px;
+            line-height: 10px;
+            /* identical to box height */
+
+            text-align: center;
+            letter-spacing: 1.92857px;
+            text-transform: uppercase;
+
+            color: #ffffff7b;
+
+            mix-blend-mode: normal;
+
+            background-color: transparent;
+            border: none;
+            width: fit-content;
+            height: 50px;
         }
     }
 }
